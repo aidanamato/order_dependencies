@@ -1,10 +1,9 @@
 package com.revature.dependencies;
 
 import java.util.ArrayList;
-import java.util.Collection;
 
 public class Solution {
-    public ArrayList<Character> build(char[] projects, char[][] dependencies) {
+    public ArrayList<Character> build(char[] projects, ArrayList<ArrayList<Character>> dependenciesList) {
         // sample input
         // projects: a, b, c, d, e, f
         // dependencies: (a, d), (f, b), (b, d), (f, a), (d, c)
@@ -16,14 +15,14 @@ public class Solution {
         for (char p : projects)
             projectList.add(p);
 
-        ArrayList<ArrayList<Character>> dependenciesList = new ArrayList<>(dependencies.length);
-        for (char[] arr : dependencies) {
-            ArrayList<Character> dependency = new ArrayList<>(arr.length);
-            for (char d : arr) {
-                dependency.add(d);
-            }
-            dependenciesList.add(dependency);
-        }
+//        ArrayList<ArrayList<Character>> dependenciesList = new ArrayList<>(dependencies.length);
+//        for (char[] arr : dependencies) {
+//            ArrayList<Character> dependency = new ArrayList<>(arr.length);
+//            for (char d : arr) {
+//                dependency.add(d);
+//            }
+//            dependenciesList.add(dependency);
+//        }
 
         ArrayList<Character> solution = new ArrayList<>(projects.length);
         solution.addAll(projectList);
